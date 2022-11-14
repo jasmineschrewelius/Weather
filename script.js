@@ -8,12 +8,19 @@ xhr.onload = function() {
   let longitude = response[0].lon;
   let latitude = response[0].lat;
   let name = response[0].name;
-  console.log(name, latitude, longitude)
-};
+  let newObject = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=1dd63c8198d8911de01c8b5aca6880bc&units=metric';
+  
+  let object1 = new XMLHttpRequest();
+  object1.open('GET', newObject , true); 
+  object1.responseType = 'json';
+  object1.send();
 
-/*
-let Http = new XMLHttpRequest();
-Http.open('GET', 'https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid=1dd63c8198d8911de01c8b5aca6880bc&units=metric', true); 
-Http.responseType = 'json';
-Http.send();
-*/
+  console.log(object1);
+  
+  object1.onload = function() {
+  let response = object1.response;
+  let temp = response.main.temp;
+  let weather = response.weather[0].main;
+  console.log(temp , weather)
+}
+};
