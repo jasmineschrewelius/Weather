@@ -22,5 +22,10 @@ xhr.onload = function() {
   let temp = response.main.temp;
   let weather = response.weather[0].main;
   console.log(temp , weather)
+
+document.getElementById("row1").innerHTML = "The local weather in" + " " + name + " " + ", Sweden.";
+
+document.getElementById("row2").innerHTML = temp + " C " + weather
+
 }
 };
