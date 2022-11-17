@@ -3,13 +3,14 @@ body {
     background-color: black;
     color: white;
 }
-.object1 {
+
+.weather1 {
     font-size: xx-large;
     text-align: center;
     font-weight: bolder;
 }
 
-.object2 {
+.weather2 {
     margin-top: 40px;
     font-size: large;
     text-align: center;
